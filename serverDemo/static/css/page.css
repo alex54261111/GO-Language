@@ -1,0 +1,49 @@
+.pageWrapper {
+    width: 40vh;
+    /* margin: 0 auto;*/
+}
+
+
+.pageBox {
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding-bottom: 80px;
+}
+
+.headerBackgroundCenter {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background-image: url(../img/cat.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+/* Contact */
+
+.checkbox__list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.checkbox__item{
+    display: inline-block;
+}
+
+.checkbox__label{
+    float: right;
+    padding: 5px 5px;
+    color: aliceblue;
+}
+
+input.form__input{
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
