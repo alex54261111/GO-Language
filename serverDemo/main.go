@@ -20,10 +20,6 @@ func main() {
 	// 设置路由
 	// http.HandleFunc("/checkUsernameAndPassword", checkUsernameAndPasswordHandler)
 	router.HandleFunc("/", serviceAPI.ControllerPage)
-	http.Handle(
-		"/web/",
-		http.StripPrefix("/web/", http.FileServer(http.Dir("./static"))),
-	)
 	// 设置路由和处理函数
 	router.HandleFunc("/registerInfo", serviceAPI.CheckUsernameAndPasswordHandler).Methods("POST")
 	router.HandleFunc("/checkUsernameAndPassword", serviceAPI.CheckUsernameAndPasswordHandler).Methods("POST")
@@ -34,9 +30,11 @@ func main() {
 	router.HandleFunc("/items/{id}", serviceAPI.DeleteItem).Methods("DELETE")
 
 	// 注册处理静态资源的路由
-	router.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
+	router.PathPrefix("/").Handler(http.StripPrefix("/", http.FileServer(http.Dir("static"))))
+	// router.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 	router.PathPrefix("/css/").Handler(http.StripPrefix("/css/", http.FileServer(http.Dir("static/css"))))
 	router.PathPrefix("/js/").Handler(http.StripPrefix("/js/", http.FileServer(http.Dir("static/js"))))
+	router.PathPrefix("/bootstrap-3.4.1-dist/").Handler(http.StripPrefix("/bootstrap-3.4.1-dist/", http.FileServer(http.Dir("static/bootstrap-3.4.1-dist"))))
 	router.PathPrefix("/img/").Handler(http.StripPrefix("/img/", http.FileServer(http.Dir("static/img"))))
 	// 启动服务器并监听指定端口
 	log.Fatal(http.ListenAndServe(":8080", router))
