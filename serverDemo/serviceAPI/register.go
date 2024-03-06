@@ -8,7 +8,7 @@ import (
 
 // type LoginResponse struct {
 // 	Exists   bool   `json:"exists"`
-// 	Message  string `json:"message"`
+// 	Message  string `json:"message"`adaw
 // 	Redirect string `json:"redirect"`
 // }
 

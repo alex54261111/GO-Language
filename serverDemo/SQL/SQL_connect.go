@@ -1,4 +1,4 @@
-package SQL
+package sql
 
 import (
 	"database/sql"
@@ -8,7 +8,7 @@ import (
 )
 
 func SQLinit() {
-	db, err := sql.Open("mysql", "root:2uraogai@tcp(localhost:3306)/test240214?charset=utf8")
+	db, err := sql.Open("mysql", "root:password@tcp(localhost:3306)/test240214?charset=utf8")
 
 	if err != nil {
 		panic(err)
@@ -22,7 +22,7 @@ func SQLinit() {
 	}
 	fmt.Println("資料庫連線成功")
 	DBCreate := `
-	CREATE TABLE user
+	CREATE TABLE IF NOT EXISTS user
 	(
 		id INT NOT NULL UNIQUE,
 		name VARCHAR(20),

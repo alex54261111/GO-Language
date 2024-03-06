@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./bootstrap-3.4.1-dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="./js/style.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/page.css">
+</head>
+<style>
+    body {
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+
+    .loginBox {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .loginContainer h2 {
+        text-align: center;
+        color: aliceblue;
+        margin-top: 180px;
+    }
+
+    .loginContainer p {
+        color: white;
+        margin: 0 0 5px 0;
+    }
+
+    .loginContainer input {
+        width: 100%;
+        height: 50px;
+        border-radius: 5px;
+        display: block;
+        font-size: 20px;
+        text-indent: 10px;
+        color: aliceblue;
+        background-color: rgba(240, 248, 255, 0.2);
+        border: 0;
+        margin-bottom: 20px;
+    }
+
+    .loginContainer .loginButton {
+        margin-top: 40px;
+    }
+    @media (max-width: 768px) {
+        .loginContainer h2{
+            margin-top: 30px;
+        }
+       
+    }
+</style>
+
+<body>
+    <div class="headerBackground">
+        <div class="loginBox">
+            <div class="header">
+                <div class="menuButton"></div>
+                <div class="menuBox">
+                    <ul>
+                        <div class="user">
+                            <div class="menuButtonClose"></div>
+                        </div>
+                        <li>
+                            <a class="click1" href="#">服務介紹
+                                <div class="downIcon"></div>
+                            </a>
+                            <ul>
+                                <li><a href="./OderSystem.html">接單系統</a></li>
+                                <li><a href="./Report.html">報表分析</a></li>
+                            </ul>
+                        <li><a href="./plan.html">價格方案</a></li>
+                        <li><a class="click2" href="/contact.html">立刻諮詢</a></li>
+                    </ul>
+                </div>
+                <div class="logo">
+                    <h1><a href="./index.html">MarlinLogo</a></h1>
+                </div>
+                <div class="nav">
+                    <ul>
+                        <li><a href="#">服務介紹</a>
+                            <ul>
+                                <li><a href="./OderSystem.html">接單系統</a></li>
+                                <li><a href="./Report.html">報表分析</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="./plan.html">價格方案</a></li>
+                        <li><a href="/contact.html">立刻諮詢</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="loginContainer pageWrapper">
+				<h2>帳號註冊</h2>
+				<form id="registrationForm" method="POST">
+				    <p>輸入註冊碼</p>
+					<input type="text" name="invitationCode" id="invitationCode">
+					<p>輸入帳號：</p>
+					<input type="text" name="username" id="username">
+					<p>輸入密碼：</p>
+					<input type="password" name="password" id="password">
+					<p>再次輸入密碼：</p>
+					<input type="password" name="password" id="password2"> <input
+						class="loginButton" type="submit" value="註冊"> <a href="#"></a>
+				</form>
+				<p id="errorMessage"></p>
+				<p id="passwordErrorMessage"></p>
+        </div>
+    </div>
+</body>
+</html>

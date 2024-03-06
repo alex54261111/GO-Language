@@ -1,19 +1,22 @@
 package main
 
 import (
+	// "database/sql"
 	"encoding/json"
 	"fmt"
 	"log"
 	"net/http"
 	"serverDemo/serviceAPI"
-	"serverDome/SQL"
+	"serverDemo/sql"
+
+	// "Users/starpensive/GO-Language-1/serverDemo/SQL"
 
 	_ "github.com/go-sql-driver/mysql" //go get -u github.com/go-sql-driver/mysql
 	"github.com/gorilla/mux"           //go get -u github.com/gorilla/mux
 )
 
 func main() {
-	SQL.SQLinit()
+	sql.SQLinit()
 	serviceAPI.SayHello()
 	router := mux.NewRouter()
 	// 设置路由
